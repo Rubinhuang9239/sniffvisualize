@@ -1,0 +1,36 @@
+<html>
+<title>miniWebPlatfrom</title>
+<head>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		
+		socket = io();
+		var macAddr = [];
+		socket.on("msg",function(msg){
+			if(macAddr.length <= 0 ){
+        		macAddr.push(msg);
+		    }
+		    else{
+		      for( i = 0; i < macAddr.length; i++ ){
+		        if(msg != macAddr[i]){
+		          macAddr.push(msg);
+		        }
+		      }
+    		}
+    		console.log(macAddr);
+		});
+
+		setInterval(function(){macAddr=[]},2000)
+
+	</script>
+
+</head>
+
+<body>
+
+HelloWord!!!
+
+</body>
+
+</html>

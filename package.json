@@ -1,0 +1,26 @@
+{
+  "name": "nshey",
+  "version": "0.0.11",
+  "description": "Sniff out the wireless network names nearby devices have connected to",
+  "main": "sniffer.js",
+  "dependencies": {
+    "byline": "^5.0.0",
+    "csv-write-stream": "^2.0.0",
+    "network": "~0.0.9",
+    "nomnom": "1.8.0",
+    "readline": "^1.3.0",
+    "stream": "0.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "nshey": "./nshey.js"
+  },
+  "author": "Surya Mattu and Sam Lavigne",
+  "license": "GPL",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/antiboredom/nshey.git"
+  }
+}
