@@ -110,10 +110,12 @@ var sniff = function(interfaceName, callback) {
 
     var dataArray = data.toString("utf8").split(",");
     //console.log(typeof(dataArray[6]));
-
-    var macAddrData = dataArray[6];
-
-    pushToClient(macAddrData)
+    
+    var dataType = dataArray[5]; // Probe Data Beacn
+    if(dataType == "Probe") {
+        var macAddrData = dataArray[6];
+        pushToClient(macAddrData);
+    }
 
     // if (typeof callback === 'function') {
     //   callback(data);
@@ -220,6 +222,7 @@ io.on("connection",function(socket){
 var pushToClient = function(msg){
   io.sockets.emit("msg", msg);
 }
+
 
 
 
